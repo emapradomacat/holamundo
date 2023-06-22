@@ -27,7 +27,7 @@ dpipeline{
     stages{
         stage('Checkout'){
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'github_emaprado', url: 'git@github.com:calamza/holamundo.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'github_emaprado', url: 'git@github.com:emapradomacat/holamundo.git']]])
             }
         }
         stage('Build artifact'){
