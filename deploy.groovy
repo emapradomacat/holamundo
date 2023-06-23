@@ -58,7 +58,7 @@ pipeline{
             }
             steps{
                 sh '''
-                    docker run --name holamundo -p 9000:80 holamundo
+                    docker run --name holamundo -p 9090:80 holamundo
                 '''
 
             }
