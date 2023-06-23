@@ -32,7 +32,7 @@ pipeline{
         }
         stage('Download artifact from nexus'){
             agent {
-                label 'dockers'
+                label 'docker'
             }
             steps{
                 sh '''
@@ -43,7 +43,7 @@ pipeline{
         }
         stage('Build container'){
             agent {
-                label 'dockers'
+                label 'docker'
             }
             steps{
                 sh '''
@@ -54,11 +54,11 @@ pipeline{
         } //fin stage build container
         stage('Deploy container'){
             agent {
-                label 'dockers'
+                label 'docker'
             }
             steps{
                 sh '''
-                    docker run -it --name holamundo -p 8080:80 holamundo
+                    docker run --name holamundo -p 8080:80 holamundo
                 '''
 
             }
@@ -66,7 +66,7 @@ pipeline{
         
         stage("Post") {
             agent {
-                label 'dockerss'
+                label 'docker'
             }
             steps {
                 sh '''
